@@ -1,5 +1,15 @@
 # Trabalho Final - Inteligência Artificial
 
+* Alberth Viana de Lima
+* Ana Júlia Pereira Corrêa
+* Daniel Silveira Gonzalez
+* Guilherme Sahdo Maciel
+* Júlio Melo Campos
+* Stepheson Custódio
+
+____
+
+
 Este projeto implementa um sistema de classificação de tabuleiros de Sudoku (4x4 e 9x9) utilizando Logic Tensor Networks (LTN) com a biblioteca LTNTorch. O código é executado diretamente no Google Colab, e os tabuleiros são lidos a partir de arquivos `.csv`.
 
 ## Objetivos
