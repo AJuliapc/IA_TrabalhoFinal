@@ -51,6 +51,10 @@ Dado um tabuleiro com células em branco:
 * LTNTorch instalado no ambiente
 * Tabuleiros em arquivos `.csv`
 
+## Para testes 
+
+* Para testar o que foi implementado foram utilizados arquivos em `.csv`, esses arquivos encontram-se em: https://drive.google.com/drive/folders/1qoAyDbs-ToL6Z1n_wIF_OJC83J7GW6Mj?usp=sharing. Esses arquivos encontram-se também aqui no repositório, na pasta `Testes`. 
+
 ## Referência
 
 * *Designing Logic Tensor Networks for Visual Sudoku Puzzle Classification*
