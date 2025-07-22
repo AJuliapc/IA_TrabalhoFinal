@@ -31,7 +31,7 @@ O código foi desenvolvido para execução no **Google Colab**, e os tabuleiros 
 
 ## Funcionalidades
 
-### ✅ Questão 1 – Classificação de Tabuleiro Fechado
+### Questão 1 – Classificação de Tabuleiro Fechado
 Verifica se um tabuleiro **completo** (sem células vazias) está correto de acordo com as regras do Sudoku.
 
 - **Retorno:**  
@@ -40,7 +40,7 @@ Verifica se um tabuleiro **completo** (sem células vazias) está correto de aco
 
 ---
 
-### 🔍 Questão 2 – Classificação de Tabuleiro Aberto (com heurísticas)
+### Questão 2 – Classificação de Tabuleiro Aberto (com heurísticas)
 Dado um tabuleiro com **células em branco**:
 
 - Detecta se há numerais que não podem ser inseridos sem violar regras (sem solução)
@@ -49,7 +49,7 @@ Dado um tabuleiro com **células em branco**:
 
 ---
 
-### 🧠 Questão 3 – Recomendação de Heurísticas
+### Questão 3 – Recomendação de Heurísticas
 
 - Compara diferentes **conjuntos de heurísticas**  
 - Gera **fórmulas lógicas** para cada conjunto  
