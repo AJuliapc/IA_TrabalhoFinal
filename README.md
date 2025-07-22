@@ -13,7 +13,8 @@
 
 ## Descrição do Projeto
 
-Este projeto implementa um sistema de **classificação de tabuleiros de Sudoku (4x4 e 9x9)** utilizando **Logic Tensor Networks (LTN)** com a biblioteca **LTNTorch**.  
+Este projeto implementa um sistema de classificação de tabuleiros de Sudoku (4×4 e 9×9) utilizando Logic Tensor Networks (LTN) com a biblioteca LTNTorch. Além da validação lógica, o sistema incorpora uma Rede Neural Perceptron Multicamadas (MLP) para auxiliar na classificação de tabuleiros abertos e na sugestão de jogadas, aprendendo o conceito de movimentos válidos através de treinamento.
+
 O código foi desenvolvido para execução no **Google Colab**, e os tabuleiros são lidos a partir de arquivos `.csv`.
 
 🔗 [Abrir no Google Colab](https://colab.research.google.com/drive/1NaGx8s9rccN70PS1UWygcNma0rPtE3oL?usp=sharing)
