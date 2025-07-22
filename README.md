@@ -56,7 +56,7 @@ Dado um tabuleiro com **células em branco**:
 - Executa um **solucionador lógico** (ex.: SAT-solver)  
 - Avalia se é possível resolver o Sudoku apenas com **LTN + heurísticas**  
 
-## Questão Teórica
+### Questão Teórica
 - Seria possivel resolver o Sudoko com LTN?
 
 -  Sim, seria possível resolver o Sudoku utilizando LTN (Logic Tensor Networks).
