@@ -54,7 +54,9 @@ Dado um tabuleiro com **células em branco**:
 - Compara diferentes **conjuntos de heurísticas**  
 - Gera **fórmulas lógicas** para cada conjunto  
 - Executa um **solucionador lógico** (ex.: SAT-solver)  
-- Avalia se é possível resolver o Sudoku apenas com **LTN + heurísticas**  
+- Avalia se é possível resolver o Sudoku apenas com **LTN + heurísticas**
+
+---
 
 ### Questão Teórica
 - Seria possivel resolver o Sudoko com LTN?
