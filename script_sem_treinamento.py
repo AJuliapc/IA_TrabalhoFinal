@@ -424,75 +424,35 @@ def classificar_cenario3_indicar_heuristicas(board_np):
 
 # --- Função Principal (Main) para Execução ---
 if __name__ == "__main__":
-    # --- DEFINA A PASTA RAIZ DO SEU TRABALHO AQUI ---
-    # AJUSTE ESTE CAMINHO PARA A LOCALIZAÇÃO DA SUA PASTA 'trabalho-final-IA'
-    # Exemplo para Windows (se a pasta 'trabalho-final-IA' estiver em Documentos\Faculdade\IA):
-    # base_directory_path = "C:/Users/anaju/OneDrive/Documentos/Faculdade/IA/trabalho-final-IA"
+    # --- AJUSTE AQUI PARA O CAMINHO COMPLETO DO SEU ARQUIVO CSV ---
+    # Exemplo para Windows:
+    # specific_csv_path = "C:/Users/anaju/OneDrive/Documentos/Faculdade/IA/trabalho-final-IA/tabuleiros-questao1/sudoku_valido.csv"
     # Exemplo para Linux/WSL:
-    # base_directory_path = "/mnt/c/Users/anaju/OneDrive/Documentos/Faculdade/IA/trabalho-final-IA"
-    # Ou se você colocou os tabuleiros diretamente na pasta do script:
-    base_directory_path = os.path.dirname(os.path.abspath(__file__)) # Pega o diretório do script atual
+    # specific_csv_path = "/mnt/c/Users/anaju/OneDrive/Documentos/Faculdade/IA/trabalho-final-IA/tabuleiros-questao1/sudoku_valido.csv"
 
-    # Define as subpastas para os tabuleiros (ajuste se seus CSVs estão diretamente na pasta do script)
-    # Se os CSVs estiverem na mesma pasta do script, você pode remover os 'os.path.join'
-    tabuleiros_q1_path = os.path.join(base_directory_path, "tabuleiros-questao1")
-    tabuleiros_q2_path = os.path.join(base_directory_path, "tabuleiros-questao2")
-    tabuleiros_q3_path = os.path.join(base_directory_path, "tabuleiros-questao3")
+    # Se o arquivo estiver na mesma pasta do script, você pode usar:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    specific_csv_path = os.path.join(script_dir, "meu_tabuleiro_especifico.csv") # Substitua "meu_tabuleiro_especifico.csv" pelo nome do seu arquivo
 
-    # Garante que os caminhos são tratados corretamente para diferentes SOs
-    tabuleiros_q1_path = os.path.normpath(tabuleiros_q1_path)
-    tabuleiros_q2_path = os.path.normpath(tabuleiros_q2_path)
-    tabuleiros_q3_path = os.path.normpath(tabuleiros_q3_path)
+    # Garante que o caminho é tratado corretamente para diferentes SOs
+    specific_csv_path = os.path.normpath(specific_csv_path)
 
-    print(f"Caminho base detectado: {base_directory_path}")
+    print(f"Tentando carregar o arquivo: {specific_csv_path}")
 
-    # Processa tabuleiros da Questão 1
-    print("\n" + "="*80)
-    print("==== Processando tabuleiros para CENÁRIO 1 (Questão 1) ====")
-    print("="*80)
-    if os.path.isdir(tabuleiros_q1_path):
-        csv_files_q1 = [f for f in os.listdir(tabuleiros_q1_path) if f.endswith(".csv")]
-        if not csv_files_q1:
-            print(f"Nenhum arquivo CSV encontrado em '{tabuleiros_q1_path}'")
-        for filename in csv_files_q1:
-            file_path = os.path.join(tabuleiros_q1_path, filename)
-            board_np, board_tensor = carregar_tabuleiro_csv(file_path)
-            if board_np is not None and board_tensor is not None:
-                print(f"\n==== ANÁLISE PARA O ARQUIVO: {filename} ====")
-                classificar_cenario1_tabuleiro_fechado(board_np, board_tensor)
-            else:
-                print(f"\n==== Pulando arquivo: {filename} devido a erros de carregamento/validação ====")
-        print("\n")
-    else:
-        print(f"ERRO: Pasta '{tabuleiros_q1_path}' não encontrada. Pulando Questão 1.")
-        print("Certifique-se de que os arquivos CSV da Questão 1 estão na subpasta 'tabuleiros-questao1'.")
+    board_np, board_tensor = carregar_tabuleiro_csv(specific_csv_path)
 
-    # Processa tabuleiros das Questões 2 e 3
-    print("\n" + "="*80)
-    print("==== Processando tabuleiros para CENÁRIO 2 e 3 (Questões 2 e 3) ====")
-    print("="*80)
-    # Lista de pastas a serem processadas para as Questões 2 e 3
-    q2_q3_folders = [tabuleiros_q2_path, tabuleiros_q3_path]
+    if board_np is not None and board_tensor is not None:
+        print(f"\n==== ANÁLISE PARA O ARQUIVO: {os.path.basename(specific_csv_path)} ====")
+        # Classifica para a Questão 1 (sempre aplicável)
+        classificar_cenario1_tabuleiro_fechado(board_np, board_tensor)
 
-    for folder_path in q2_q3_folders:
-        if os.path.isdir(folder_path):
-            print(f"\n--- Processando tabuleiros da pasta: {os.path.basename(folder_path)} ---")
-            csv_files_q2_q3 = [f for f in os.listdir(folder_path) if f.endswith(".csv")]
-            if not csv_files_q2_q3:
-                print(f"Nenhum arquivo CSV encontrado em '{folder_path}'")
-            for filename in csv_files_q2_q3:
-                file_path = os.path.join(folder_path, filename)
-                board_np, board_tensor = carregar_tabuleiro_csv(file_path)
-                if board_np is not None and board_tensor is not None:
-                    print(f"\n==== ANÁLISE PARA O ARQUIVO: {filename} ====")
-                    if np.any(board_np == 0): # Só executa Q2 e Q3 se o tabuleiro tiver células vazias
-                        classificar_cenario2_tabuleiro_aberto(board_np)
-                        classificar_cenario3_indicar_heuristicas(board_np)
-                    else:
-                        print("\n--- CENÁRIO 2 & 3: Não aplicável. O tabuleiro está completo. ---")
-                        print("Este tabuleiro será classificado apenas pela Questão 1.")
-                else:
-                    print(f"\n==== Pulando arquivo: {filename} devido a erros de carregamento/validação ====")
+        # Se o tabuleiro tiver células vazias, executa as Questões 2 e 3
+        if np.any(board_np == 0):
+            classificar_cenario2_tabuleiro_aberto(board_np)
+            classificar_cenario3_indicar_heuristicas(board_np)
         else:
-            print(f"ERRO: Pasta '{os.path.basename(folder_path)}' não encontrada. Pulando processamento desta pasta.")
-            print(f"Certifique-se de que os arquivos CSV para as Questões 2 e 3 estão nas subpastas apropriadas.")
+            print("\n--- CENÁRIO 2 & 3: Não aplicável. O tabuleiro está completo. ---")
+            print("Este tabuleiro foi classificado apenas pela Questão 1.")
+    else:
+        print(f"\n==== Não foi possível carregar o arquivo: {os.path.basename(specific_csv_path)} ====")
+        print("Verifique o caminho e o formato do arquivo.")
