@@ -62,6 +62,33 @@ E são divididos em:
 
 ---
 
+## Como Testar (Execução Direta em Python)
+
+1.  **Baixe ou clone o repositório:**
+    Certifique-se de que a estrutura de pastas (`tabuleiros-questao1`, `tabuleiros-questao2`, `tabuleiros-questao3` e seus respectivos `.csv`s) esteja no mesmo diretório dos scripts `script.py` e `script_sem_treinamento.py`.
+
+2.  **Abra o terminal ou prompt de comando** no diretório onde os arquivos estão localizados.
+
+3.  **Execute o script desejado:**
+
+      * **Para o script com treinamento (`script.py`):**
+
+        ```bash
+        python script.py
+        ```
+
+        Este script irá carregar automaticamente os tabuleiros das subpastas `tabuleiros-questao1`, `tabuleiros-questao2` e `tabuleiros-questao3`, processando-os de acordo com as funcionalidades implementadas.
+
+      * **Para o script sem treinamento (`script_sem_treinamento.py`):**
+
+        ```bash
+        python script_sem_treinamento.py
+        ```
+
+        Similarmente, este script também carregará os tabuleiros das subpastas para avaliação.
+
+---
+
 ## Objetivos
 
 - Representar as regras do Sudoku como **axiomas lógicos** em LTN  
@@ -130,7 +157,7 @@ Seria possivel resolver o Sudoko com LTN?
 Os testes foram realizados com tabuleiros armazenados em arquivos `.csv`, disponíveis nos links abaixo:
 
 - 📁 [Google Drive – Arquivos de Teste](https://drive.google.com/drive/folders/1qoAyDbs-ToL6Z1n_wIF_OJC83J7GW6Mj?usp=sharing)  
-- 📂 Também incluídos no repositório local, na pasta `Testes`  
+- 📂 Também incluídos no repositório local, na pasta `Testes` e em `IAEmPython.zip`  
 
 ---
 
