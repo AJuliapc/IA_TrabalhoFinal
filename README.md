@@ -15,11 +15,11 @@
 
 Este projeto implementa um sistema de classificação de tabuleiros de Sudoku (4×4 e 9×9) utilizando Logic Tensor Networks (LTN) com a biblioteca LTNTorch. Além da validação lógica, o sistema incorpora uma Rede Neural Perceptron Multicamadas (MLP) para auxiliar na classificação de tabuleiros abertos e na sugestão de jogadas, aprendendo o conceito de movimentos válidos através de treinamento.
 
-O código foi desenvolvido para execução no **Google Colab**, e os tabuleiros são lidos a partir de arquivos `.csv`.
+O código foi desenvolvido para execução no **Google Colab** e em **Em Python** no VS Code ou outro meio de editar/compilar códigos, e os tabuleiros de teste são lidos a partir de arquivos `.csv`.
 
 🔗 [Abrir no Google Colab](https://colab.research.google.com/drive/1NaGx8s9rccN70PS1UWygcNma0rPtE3oL?usp=sharing)
 
-É disponibilizado também neste repositórioo o arquivo `.ipynb` deste Google Colab para análise dos testes feitos.
+É disponibilizado também neste repositórioo o arquivo `.ipynb` deste Google Colab para análise dos testes feitos. Abaixo há a explicação de onde está os arquivos em **Pyhton e resumidamente o que cada script faz.**
 
 ---
 
@@ -32,7 +32,31 @@ Este projeto também está disponível em formato `.py`, além da versão no Goo
 
 <img width="1682" height="386" alt="image" src="https://github.com/user-attachments/assets/3ad721ea-895b-4f9e-b406-ea4e6f4405bb" />
 
+Frisa-se que a principal diferença entre esses códigos é que o `script_sem_treinamento.py` usa regras programadas diretamente para validar e analisar o Sudoku. Ele sabe as regras "de antemão". Já o `script.py` introduz uma rede neural que "aprende" as regras a partir de exemplos, permitindo que ela preveja a validade das jogadas com base em probabilidades. O segundo código também inclui um solver SAT para encontrar a solução exata.
+
 Ambos os scripts estão prontos para execução, com os caminhos de teste já configurados. O pacote também inclui as pastas com os arquivos `.csv` contendo os tabuleiros de Sudoku utilizados em diferentes cenários - válido, inválido, vazio e solucionável.
+
+Os `.csv` estão disponíveis nas pastas, desta forma:
+
+  
+        ├── script.py
+        ├── script_sem_treinamento.py
+        ├── tabuleiros-questao1/
+        │   └── tabuleiro4x4-invalido.csv
+        |   └── ...
+        ├── tabuleiros-questao2/
+        │   └── tabuleiro4x4-parcial.csv
+        |   └── ...
+        └── tabuleiros-questao3/
+        |   └── tabuleiro4x4-solucionavel.csv
+        |   └── ...    
+
+E são divididos em:
+* Válido: Um tabuleiro completo onde todas as regras do Sudoku (números únicos por linha, coluna e bloco) são respeitadas. Ideal para testar a validação do Cenário 1.
+* Inválido: Um tabuleiro completo ou parcialmente preenchido que contém pelo menos uma violação das regras do Sudoku. Serve para verificar a capacidade do sistema em identificar erros.
+* Vazio: Um tabuleiro onde todas as células estão marcadas com '0'. Este caso extremo testa o comportamento do sistema em um estado inicial sem preenchimentos.
+* Parcial: Um tabuleiro incompleto (contém '0's) onde os números preenchidos até o momento não violam as regras, mas ele ainda não tem uma solução óbvia ou garantida. Usado para testar as heurísticas e a análise de movimentos.
+* Solucionável: Um tabuleiro incompleto que, embora tenha células vazias, comprovadamente possui uma ou mais soluções válidas. É o tipo de tabuleiro que o solver SAT no segundo script tentaria resolver.
 
 **Observação**: Caso queira executar um Sudoku à parte, adicione o arquivo `.csv` em uma das pastas (`tabuleiro-questao1`, `tabuleiro-questao2`, `tabuleiro-questao3`).
 
