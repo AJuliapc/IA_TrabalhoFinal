@@ -19,11 +19,20 @@ O código foi desenvolvido para execução no **Google Colab**, e os tabuleiros 
 
 🔗 [Abrir no Google Colab](https://colab.research.google.com/drive/1NaGx8s9rccN70PS1UWygcNma0rPtE3oL?usp=sharing)
 
+É disponibilizado também neste repositórioo o arquivo `.ipynb` deste Google Colab para análise dos testes feitos.
+
 ---
 
 ### Em Python 
 
-Este projeto está disponibilizado em `.py` também, além do Google Colab. A versão com treinamento encontra-se em `script.py` e a versão sem treinamento em `script_sem_treinamento.py`. Para rodar estes códigos basta alterar o caminho para o `.csv` que você quer, ajustando os caminhos na main de cada código. 
+Este projeto também está disponível em formato `.py`, além da versão no Google Colab. Os arquivos com e sem treinamento podem ser encontrados na pasta `IAEmPython.zip`. Dentro desse `.zip`, estão incluídos:
+
+* `script.py` (com treinamento)
+* `script_sem_treinamento.py` (sem treinamento)
+
+Ambos os scripts estão prontos para execução, com os caminhos de teste já configurados. O pacote também inclui as pastas com os arquivos `.csv` contendo os tabuleiros de Sudoku utilizados em diferentes cenários - válido, inválido, vazio e solucionável.
+
+**Observação**: Caso queira executar um Sudoku à parte, adicione o arquivo `.csv` em uma das pastas (`tabuleiro-questao1`, `tabuleiro-questao2`, `tabuleiro-questao3`).
 
 ---
 
