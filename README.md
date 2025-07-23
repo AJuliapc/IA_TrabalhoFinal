@@ -30,6 +30,8 @@ Este projeto também está disponível em formato `.py`, além da versão no Goo
 * `script.py` (com treinamento)
 * `script_sem_treinamento.py` (sem treinamento)
 
+<img width="1682" height="386" alt="image" src="https://github.com/user-attachments/assets/3ad721ea-895b-4f9e-b406-ea4e6f4405bb" />
+
 Ambos os scripts estão prontos para execução, com os caminhos de teste já configurados. O pacote também inclui as pastas com os arquivos `.csv` contendo os tabuleiros de Sudoku utilizados em diferentes cenários - válido, inválido, vazio e solucionável.
 
 **Observação**: Caso queira executar um Sudoku à parte, adicione o arquivo `.csv` em uma das pastas (`tabuleiro-questao1`, `tabuleiro-questao2`, `tabuleiro-questao3`).
