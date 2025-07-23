@@ -21,6 +21,12 @@ O código foi desenvolvido para execução no **Google Colab**, e os tabuleiros 
 
 ---
 
+### Em Python 
+
+Este projeto está disponibilizado em `.py` também, além do Google Colab. A versão com treinamento encontra-se em `script.py` e a versão sem treinamento em `script_sem_treinamento.py`. Para rodar estes códigos basta alterar o caminho para o `.csv` que você quer, ajustando os caminhos na main de cada código. 
+
+---
+
 ## Objetivos
 
 - Representar as regras do Sudoku como **axiomas lógicos** em LTN  
