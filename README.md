@@ -60,7 +60,7 @@ Dado um tabuleiro com **células em branco**:
 
 ### Questão Teórica
 
-**Seria possivel resolver o Sudoko com LTN?**
+Seria possivel resolver o Sudoko com LTN?
 
 -  Sim, seria possível resolver o Sudoku utilizando LTN (Logic Tensor Networks).
     A LTN permite integrar lógica simbólica (como as regras do Sudoku) com aprendizado baseado em tensores, possibilitando que as restrições sejam tratadas como fórmulas lógicas com graus de verdade (fuzzy logic).
